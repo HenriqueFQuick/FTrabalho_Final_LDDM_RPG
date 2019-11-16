@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "151736023024",
+    "firebase_url": "https://ficha-rpg-2c326.firebaseio.com",
+    "project_id": "ficha-rpg-2c326",
+    "storage_bucket": "ficha-rpg-2c326.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151736023024:android:74c4dd7a104dc466440f35",
+        "android_client_info": {
+          "package_name": "com.example.app_fichas_rpg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151736023024-u8e0drnniobup9eklvt6e2ban9e8is2v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_fichas_rpg",
+            "certificate_hash": "36ee4b547a330c44f4bea1c0c92be2ff10749b70"
+          }
+        },
+        {
+          "client_id": "151736023024-3s9fur2ksu5qr7b21n6mivv49hb3eh05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVrQ51sP80s3rlnf0SHA6LN5LeUmw7FSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151736023024-3s9fur2ksu5qr7b21n6mivv49hb3eh05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

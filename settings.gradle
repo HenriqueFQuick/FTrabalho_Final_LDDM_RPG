@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='App_Fichas_RPG'

@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_margin="8dp"
+    android:layout_marginTop="8dp"
+    tools:context=".CriarFicha">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_Nome"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Nome:" />
+
+            <EditText
+                android:id="@+id/edt_Nome"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Nome"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:inputType="textPersonName" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_Classe"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Classe:"/>
+
+            <EditText
+                android:id="@+id/edt_Classe"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Classe"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:inputType="textPersonName"/>
+
+            <TextView
+                android:id="@+id/txt_Nivel"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="8dp"
+                android:text="Nivel:"/>
+
+            <EditText
+                android:id="@+id/edt_Nivel"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Nivel"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:inputType="number"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_Raca"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Raça:"/>
+
+            <EditText
+                android:id="@+id/edt_Raca"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Raça"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:inputType="textPersonName" />
+
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_Vida"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Vida:"/>
+
+            <EditText
+                android:id="@+id/edt_HP_Total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="HP total"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:inputType="numberSigned" />
+
+            <EditText
+                android:id="@+id/edt_HP_Atual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="HP atual"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:inputType="numberSigned" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txt_Dano"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Dano:"/>
+
+            <EditText
+                android:id="@+id/edt_Dano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Dano"
+                android:textAlignment="center"
+                android:inputType="numberSigned" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_Forca"
+                android:layout_width="100sp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Força" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Forca"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="3"
+                android:indeterminate="false"
+                android:max="20"
+                android:progress="10" />
+
+            <TextView
+                android:id="@+id/txt_num_Forca"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Forca_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:hint="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Inteligencia"
+                android:layout_width="100sp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Inteligência"/>
+
+            <SeekBar
+                android:id="@+id/seekBar_Inteligencia"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:layout_weight="3"
+                android:progress="10" />
+
+            <TextView
+                android:id="@+id/txt_num_Inteligencia"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Inteligencia_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:textFontWeight="1"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Agilidade"
+                android:layout_width="100sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Agilidade" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Agilidade"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="3"
+                android:max="20"
+                android:progress="10" />
+
+            <TextView
+                android:id="@+id/txt_num_Agilidade"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Agilidade_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_Desvio"
+                android:layout_width="100sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Desvio" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Desvio"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="3"
+                android:max="20"
+                android:progress="10" />
+
+            <TextView
+                android:id="@+id/txt_num_Desvio"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Desvio_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Defesa"
+                android:layout_width="100sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Defesa" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Defesa"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:progress="10" />
+
+            <TextView
+                android:id="@+id/txt_num_Defesa"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Defesa_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Deslocamento"
+                android:layout_width="100sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Deslocamento" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Deslocamento"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="3"
+                android:max="20"
+                android:progress="10"/>
+
+            <TextView
+                android:id="@+id/txt_num_Deslocamento"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Deslocamento_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Conhecimento"
+                android:layout_width="100sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Conhecimento" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Conhecimento"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:progress="10"/>
+
+            <TextView
+                android:id="@+id/txt_num_Conhecimento"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Conhecimento_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Carisma"
+                android:layout_width="100sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Carisma" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Carisma"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:progress="10"/>
+
+            <TextView
+                android:id="@+id/txt_num_Carisma"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Carisma_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Precisao"
+                android:layout_width="100sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Precisao" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Precisao"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:progress="10"/>
+
+            <TextView
+                android:id="@+id/txt_num_Precisao"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Precisao_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Percepcao"
+                android:layout_width="100sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Percepcao" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Percepcao"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:progress="10"/>
+
+            <TextView
+                android:id="@+id/txt_num_Percepcao"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Percepcao_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Sorte"
+                android:layout_width="100sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Sorte" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Sorte"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:progress="10"/>
+
+            <TextView
+                android:id="@+id/txt_num_Sorte"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Sorte_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/txt_Furtividade"
+                android:layout_width="100sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Furtividade" />
+
+            <SeekBar
+                android:id="@+id/seekBar_Furtividade"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="200sp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:max="20"
+                android:progress="10"/>
+
+            <TextView
+                android:id="@+id/txt_num_Furtividade"
+                android:layout_width="75dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:text="0"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/txt_num_Furtividade_Extra"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:text="0"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Mochila"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/txt_Gold"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:text="Gold: "/>
+
+            <EditText
+                android:id="@+id/edt_Gold"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Gold"
+                android:textSize="15dp"
+                android:textAlignment="center"
+                android:focusable="true"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+
+
+        <ListView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/lst_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_Confirm"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Confirmar" />
+
+            <Button
+                android:id="@+id/btn_back_Criar_Main"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Voltar" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
