@@ -3,47 +3,71 @@ package com.example.app_fichas_rpg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class CriarFichaActivity extends AppCompatActivity {
+public class CriarFichaActivity extends AppCompatActivity implements View.OnClickListener {
+
+    public EditText edt_Nome;
+    public EditText edt_Classe;
+    public EditText edt_Nivel;
+    public EditText edt_Raca;
+    public EditText edt_HP_Atual;
+    public EditText edt_HP_Total;
+    public EditText edt_Dano;
 
     public SeekBar seekBar_forca;
     public TextView txt_num_Forca;
+    public TextView txt_num_Forca_Extra;
 
     public SeekBar seekBar_Inteligencia;
     public TextView txt_num_Inteligencia;
+    public TextView txt_num_Inteligencia_Extra;
 
     public SeekBar seekBar_Agilidade;
     public TextView txt_num_Agilidade;
+    public TextView txt_num_Agilidade_Extra;
 
     public SeekBar seekBar_Desvio;
     public TextView txt_num_Desvio;
+    public TextView txt_num_Desvio_Extra;
 
     public SeekBar seekBar_Defesa;
     public TextView txt_num_Defesa;
+    public TextView txt_num_Defesa_Extra;
 
     public SeekBar seekBar_Deslocamento;
     public TextView txt_num_Deslocamento;
+    public TextView txt_num_Deslocamento_Extra;
 
     public SeekBar seekBar_Conhecimento;
     public TextView txt_num_Conhecimento;
+    public TextView txt_num_Conhecimento_Extra;
 
     public SeekBar seekBar_Carisma;
     public TextView txt_num_Carisma;
+    public TextView txt_num_Carisma_Extra;
 
     public SeekBar seekBar_Precisao;
     public TextView txt_num_Precisao;
+    public TextView txt_num_Precisao_Extra;
 
     public SeekBar seekBar_Percepcao;
     public TextView txt_num_Percepcao;
+    public TextView txt_num_Percepcao_Extra;
 
     public SeekBar seekBar_Sorte;
     public TextView txt_num_Sorte;
+    public TextView txt_num_Sorte_Extra;
 
     public SeekBar seekBar_Furtividade;
     public TextView txt_num_Furtividade;
+    public TextView txt_num_Furtividade_Extra;
+
+    public Ficha ficha = null;
 
 
     @Override
@@ -52,50 +76,146 @@ public class CriarFichaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_criar_ficha);
         Inicializar();
         Listeners();
-
-
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_Confirm:
+                 SalvarDados();
+                break;
+            case R.id.btn_back_Criar_Main:
+                break;
+            default:
+                break;
+        }
+    }
 
+    public void SalvarDados(){
+        if(DadosValidos()) {
+            PreencherFicha();
+            DataBase db = new DataBase(ficha);
+        }else{
+            Toast.makeText(getApplicationContext(), "Preencha todos os dados", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+    public void PreencherFicha(){
+
+        ficha = new Ficha();
+
+        ficha.setNome(edt_Nome.getText().toString());
+        ficha.setClasse(edt_Classe.getText().toString());
+        ficha.setNivel(Integer.parseInt(edt_Nivel.getText().toString()));
+        ficha.setRaca(edt_Raca.getText().toString());
+        ficha.setVidaTotal(Integer.parseInt(edt_HP_Total.getText().toString()));
+        ficha.setVidaAtual(Integer.parseInt(edt_HP_Total.getText().toString()));
+        ficha.setDano(Double.parseDouble(edt_Dano.getText().toString()));
+
+        ficha.setForca(Integer.parseInt(txt_num_Forca.getText().toString()));
+        ficha.setInteligencia(Integer.parseInt(txt_num_Inteligencia.getText().toString()));
+        ficha.setAgilidade(Integer.parseInt(txt_num_Agilidade.getText().toString()));
+        ficha.setDesvio(Integer.parseInt(txt_num_Desvio.getText().toString()));
+        ficha.setDefesa(Integer.parseInt(txt_num_Defesa.getText().toString()));
+        ficha.setDeslocamento(Integer.parseInt(txt_num_Deslocamento.getText().toString()));
+        ficha.setConhecimento(Integer.parseInt(txt_num_Conhecimento.getText().toString()));
+        ficha.setCarisma(Integer.parseInt(txt_num_Carisma.getText().toString()));
+        ficha.setPrecisao(Integer.parseInt(txt_num_Precisao.getText().toString()));
+        ficha.setPercepcao(Integer.parseInt(txt_num_Percepcao.getText().toString()));
+        ficha.setSorte(Integer.parseInt(txt_num_Sorte.getText().toString()));
+        ficha.setFurtividade(Integer.parseInt(txt_num_Furtividade.getText().toString()));
+
+        ficha.setForcaExtra(Integer.parseInt(txt_num_Forca_Extra.getText().toString()));
+        ficha.setInteligenciaExtra(Integer.parseInt(txt_num_Inteligencia_Extra.getText().toString()));
+        ficha.setAgilidadeExtra(Integer.parseInt(txt_num_Agilidade_Extra.getText().toString()));
+        ficha.setDesvioExtra(Integer.parseInt(txt_num_Desvio_Extra.getText().toString()));
+        ficha.setDefesaExtra(Integer.parseInt(txt_num_Defesa_Extra.getText().toString()));
+        ficha.setDeslocamentoExtra(Integer.parseInt(txt_num_Deslocamento_Extra.getText().toString()));
+        ficha.setConhecimentoExtra(Integer.parseInt(txt_num_Conhecimento_Extra.getText().toString()));
+        ficha.setCarismaExtra(Integer.parseInt(txt_num_Carisma_Extra.getText().toString()));
+        ficha.setPrecisaoExtra(Integer.parseInt(txt_num_Precisao_Extra.getText().toString()));
+        ficha.setPercepcaoExtra(Integer.parseInt(txt_num_Percepcao_Extra.getText().toString()));
+        ficha.setSorteExtra(Integer.parseInt(txt_num_Sorte_Extra.getText().toString()));
+        ficha.setFurtividadeExtra(Integer.parseInt(txt_num_Furtividade_Extra.getText().toString()));
+    }
+
+
+    public boolean DadosValidos(){
+        boolean dadosValidos = true;
+
+        if(     (edt_Nome.getText().length() == 0)     ||
+                (edt_Classe.getText().length() == 0)   ||
+                (edt_Nivel.getText().length() == 0)    ||
+                (edt_Raca.getText().length() == 0)     ||
+                (edt_HP_Total.getText().length() == 0) ||
+                (edt_Dano.getText().length() == 0)
+        ){
+            dadosValidos = false;
+        }
+
+        return dadosValidos;
+    }
 
 
     public void Inicializar(){
+
+        edt_Nome = findViewById(R.id.edt_Nome);
+        edt_Classe = findViewById(R.id.edt_Classe);
+        edt_Nivel = findViewById(R.id.edt_Nivel);
+        edt_Raca = findViewById(R.id.edt_Raca);
+        edt_HP_Atual = findViewById(R.id.edt_HP_Atual);
+        edt_HP_Total = findViewById(R.id.edt_HP_Total);
+        edt_Dano = findViewById(R.id.edt_Dano);
+
         seekBar_forca = findViewById(R.id.seekBar_Forca);
         txt_num_Forca = findViewById(R.id.txt_num_Forca);
+        txt_num_Forca_Extra = findViewById(R.id.txt_num_Forca_Extra);
 
         seekBar_Inteligencia = findViewById(R.id.seekBar_Inteligencia);
         txt_num_Inteligencia = findViewById(R.id.txt_num_Inteligencia);
+        txt_num_Inteligencia_Extra = findViewById(R.id.txt_num_Inteligencia_Extra);
 
         seekBar_Agilidade = findViewById(R.id.seekBar_Agilidade);
         txt_num_Agilidade = findViewById(R.id.txt_num_Agilidade);
+        txt_num_Agilidade_Extra = findViewById(R.id.txt_num_Agilidade_Extra);
 
         seekBar_Desvio = findViewById(R.id.seekBar_Desvio);
         txt_num_Desvio = findViewById(R.id.txt_num_Desvio);
+        txt_num_Desvio_Extra = findViewById(R.id.txt_num_Desvio_Extra);
 
         seekBar_Defesa = findViewById(R.id.seekBar_Defesa);
         txt_num_Defesa = findViewById(R.id.txt_num_Defesa);
+        txt_num_Defesa_Extra = findViewById(R.id.txt_num_Defesa_Extra);
 
         seekBar_Deslocamento = findViewById(R.id.seekBar_Deslocamento);
         txt_num_Deslocamento = findViewById(R.id.txt_num_Deslocamento);
+        txt_num_Deslocamento_Extra = findViewById(R.id.txt_num_Deslocamento_Extra);
 
         seekBar_Conhecimento = findViewById(R.id.seekBar_Conhecimento);
         txt_num_Conhecimento = findViewById(R.id.txt_num_Conhecimento);
+        txt_num_Conhecimento_Extra = findViewById(R.id.txt_num_Conhecimento_Extra);
 
         seekBar_Carisma = findViewById(R.id.seekBar_Carisma);
         txt_num_Carisma = findViewById(R.id.txt_num_Carisma);
+        txt_num_Carisma_Extra = findViewById(R.id.txt_num_Carisma_Extra);
 
         seekBar_Precisao = findViewById(R.id.seekBar_Precisao);
         txt_num_Precisao = findViewById(R.id.txt_num_Precisao);
+        txt_num_Precisao_Extra = findViewById(R.id.txt_num_Precisao_Extra);
 
         seekBar_Percepcao = findViewById(R.id.seekBar_Percepcao);
         txt_num_Percepcao = findViewById(R.id.txt_num_Percepcao);
+        txt_num_Percepcao_Extra = findViewById(R.id.txt_num_Percepcao_Extra);
 
-        seekBar_Sorte= findViewById(R.id.seekBar_Sorte);
+        seekBar_Sorte = findViewById(R.id.seekBar_Sorte);
         txt_num_Sorte = findViewById(R.id.txt_num_Sorte);
+        txt_num_Sorte_Extra = findViewById(R.id.txt_num_Sorte_Extra);
 
         seekBar_Furtividade = findViewById(R.id.seekBar_Furtividade);
         txt_num_Furtividade = findViewById(R.id.txt_num_Furtividade);
+        txt_num_Furtividade_Extra = findViewById(R.id.txt_num_Furtividade_Extra);
     }
     public void Listeners(){
         seekBar_forca.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -304,4 +424,6 @@ public class CriarFichaActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
