@@ -96,6 +96,7 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         if(DadosValidos()) {
             PreencherFicha();
             DataBase db = new DataBase(ficha);
+            db.Salvar(ficha);
         }else{
             Toast.makeText(getApplicationContext(), "Preencha todos os dados", Toast.LENGTH_LONG).show();
         }
