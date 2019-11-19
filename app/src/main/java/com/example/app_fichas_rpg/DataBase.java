@@ -12,7 +12,7 @@ public class DataBase {
     }
 
     public void Salvar(Ficha ficha){
-        
+
     }
 
     public boolean Delete(Ficha ficha){

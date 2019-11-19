@@ -2,6 +2,7 @@ package com.example.app_fichas_rpg;
 
 public class Ficha {
 
+    //region Atributos
     public String nome ="";
     public String classe="";
     public String raca="";
@@ -47,9 +48,12 @@ public class Ficha {
 
     public int furtividade=0;
     public int furtividadeExtra=0;
+    //endregion
 
+    //region Construtor vazio
     public Ficha(){}
-
+    //endregion
+    //region Construtor sem atributos extras
     public Ficha(String nome, String classe, String raca, double vidaTotal, double vidaAtual, double dano, int forca, int inteligencia, int agilidade, int desvio, int defesa, int deslocamento, int conhecimento, int carisma, int precisao, int percepcao, int sorte, int furtividade) {
         this.nome = nome;
         this.classe = classe;
@@ -70,7 +74,8 @@ public class Ficha {
         this.sorte = sorte;
         this.furtividade = furtividade;
     }
-
+    //endregion
+    //region Construtor com todos os atributos
     public Ficha(String nome, String classe, String raca, double vidaTotal, double vidaAtual, double dano, int forca, int forcaExtra, int inteligencia, int inteligenciaExtra, int agilidade, int agilidadeExtra, int desvio, int desvioExtra, int defesa, int defesaExtra, int deslocamento, int deslocamentoExtra, int conhecimento, int conhecimentoExtra, int carisma, int carismaExtra, int precisao, int precisaoExtra, int percepcao, int percepcaoExtra, int sorte, int sorteExtra, int furtividade, int furtividadeExtra) {
         this.nome = nome;
         this.classe = classe;
@@ -103,9 +108,9 @@ public class Ficha {
         this.furtividade = furtividade;
         this.furtividadeExtra = furtividadeExtra;
     }
+    //endregion
 
-
-
+    //region Getters
     public String getNome() {return nome;   }
 
     public String getClasse() {return classe;    }
@@ -167,7 +172,8 @@ public class Ficha {
     public int getFurtividade() {return furtividade;}
 
     public int getFurtividadeExtra() {return furtividadeExtra;}
-
+    //endregion
+    //region Setters
     public void setNome(String nome) {this.nome = nome;}
 
     public void setClasse(String classe) {this.classe = classe;}
@@ -229,6 +235,6 @@ public class Ficha {
     public void setFurtividade(int furtividade) {this.furtividade = furtividade; }
 
     public void setFurtividadeExtra(int furtividadeExtra) {this.furtividadeExtra = furtividadeExtra;}
-
+    //endregion
 
 }

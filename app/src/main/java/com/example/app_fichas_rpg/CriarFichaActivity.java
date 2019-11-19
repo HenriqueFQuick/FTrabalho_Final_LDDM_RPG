@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class CriarFichaActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //region Atributos
     public EditText edt_Nome;
     public EditText edt_Classe;
     public EditText edt_Nivel;
@@ -68,7 +69,7 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
     public TextView txt_num_Furtividade_Extra;
 
     public Ficha ficha = null;
-
+    //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +103,7 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-
+    //region Preencher dados
     public void PreencherFicha(){
 
         ficha = new Ficha();
@@ -141,8 +142,8 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         ficha.setSorteExtra(Integer.parseInt(txt_num_Sorte_Extra.getText().toString()));
         ficha.setFurtividadeExtra(Integer.parseInt(txt_num_Furtividade_Extra.getText().toString()));
     }
-
-
+    //endregion
+    //region Validando dados
     public boolean DadosValidos(){
         boolean dadosValidos = true;
 
@@ -158,8 +159,8 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
 
         return dadosValidos;
     }
-
-
+    //endregion
+    //region Inicializando atributos ( findViewById())
     public void Inicializar(){
 
         edt_Nome = findViewById(R.id.edt_Nome);
@@ -218,6 +219,8 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         txt_num_Furtividade = findViewById(R.id.txt_num_Furtividade);
         txt_num_Furtividade_Extra = findViewById(R.id.txt_num_Furtividade_Extra);
     }
+    //endregion
+    //region Setando Listeners para cara seekBar para setar valor em um textview
     public void Listeners(){
         seekBar_forca.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -425,6 +428,7 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
             }
         });
     }
+    //endregion
 
 
 }
