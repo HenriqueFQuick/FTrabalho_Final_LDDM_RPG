@@ -1,20 +1,21 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\383837a1f189d10df3511e6927171459\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\7486e7b29120c3ce52d033d841b80346\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\be758b882f94fdc8fda8b461dcaf0c83\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\6185f9922dbdec258d755400505a7480\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\922d0a7a738b37f00ad7e7b4cbbdb0f3\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\5e8839c5fdf906c0d681ada18dc250c8\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\955a6585d7a9c18d6bf6a87f6ee65069\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\36abab4db82c302e39d424a4f8f4e29e\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\6d12fcce36df08538717b88e14b43a49\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\27bb1a82a352fcc4ad1c98b891d7bb5d\activity-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\557eb28e58ea701ed3e7b1d827d36107\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\f935106c2b4fa8baea5aa8af14d2b13f\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\36abab4db82c302e39d424a4f8f4e29e\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\0136ca65841c199e13145e51c5d77d51\core-1.1.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\a7ed0ca913094dcd572a2a491ee77296\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\9e4ba8edcf27848e4358a1aaab005aeb\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
@@ -25,25 +26,25 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\conta\.gradle\ca
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\cfc7a075599825242ccb3bf9049138d1\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\942ae5bb408d75da4f7f89b1ab4a5794\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\3f7255e5c39577612d42757c6a1a973c\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
 	package
 		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-22:12
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:5:5-20:19
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:5:5-22:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\7486e7b29120c3ce52d033d841b80346\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\7486e7b29120c3ce52d033d841b80346\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.core:core:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\0136ca65841c199e13145e51c5d77d51\core-1.1.0\AndroidManifest.xml:24:5-89
@@ -64,24 +65,32 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\co
 		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:11:9-40
-activity#com.example.app_fichas_rpg.CriarFicha
-ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:12:9-57
+activity#com.example.app_fichas_rpg.ListarFichaActivity
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:12:9-66
 	android:name
-		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:12:19-45
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:12:19-54
+activity#com.example.app_fichas_rpg.CriarFichaActivity
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:13:9-56
+	android:name
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:13:19-53
 activity#com.example.app_fichas_rpg.MainActivity
-ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:13:9-19:20
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:13:19-47
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:14:13-18:29
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:17:17-77
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:17:27-74
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:18:27-74
+activity#com.example.app_fichas_rpg.DataBase
+ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:21:9-46
+	android:name
+		ADDED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml:21:19-43
 uses-sdk
 INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\conta\AndroidStudioProjects\App_Fichas_RPG\app\src\main\AndroidManifest.xml
@@ -90,6 +99,8 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\conta\.gradle\caches\t
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\383837a1f189d10df3511e6927171459\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\7486e7b29120c3ce52d033d841b80346\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\7486e7b29120c3ce52d033d841b80346\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\be758b882f94fdc8fda8b461dcaf0c83\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\be758b882f94fdc8fda8b461dcaf0c83\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\6185f9922dbdec258d755400505a7480\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\6185f9922dbdec258d755400505a7480\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\922d0a7a738b37f00ad7e7b4cbbdb0f3\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -98,6 +109,8 @@ MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\conta\.gradle\ca
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\5e8839c5fdf906c0d681ada18dc250c8\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\955a6585d7a9c18d6bf6a87f6ee65069\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\955a6585d7a9c18d6bf6a87f6ee65069\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\36abab4db82c302e39d424a4f8f4e29e\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\36abab4db82c302e39d424a4f8f4e29e\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\6d12fcce36df08538717b88e14b43a49\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\6d12fcce36df08538717b88e14b43a49\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\27bb1a82a352fcc4ad1c98b891d7bb5d\activity-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -106,8 +119,6 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\con
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\557eb28e58ea701ed3e7b1d827d36107\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\f935106c2b4fa8baea5aa8af14d2b13f\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\f935106c2b4fa8baea5aa8af14d2b13f\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\36abab4db82c302e39d424a4f8f4e29e\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\36abab4db82c302e39d424a4f8f4e29e\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\0136ca65841c199e13145e51c5d77d51\core-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.1.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\0136ca65841c199e13145e51c5d77d51\core-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\conta\.gradle\caches\transforms-2\files-2.1\a7ed0ca913094dcd572a2a491ee77296\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44

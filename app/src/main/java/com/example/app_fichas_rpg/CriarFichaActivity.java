@@ -2,8 +2,10 @@ package com.example.app_fichas_rpg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -69,6 +71,9 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
     public TextView txt_num_Furtividade_Extra;
 
     public Ficha ficha = null;
+
+    public Button btnConfirm;
+    public Button btnVoltar;
     //endregion
 
     @Override
@@ -77,6 +82,9 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_criar_ficha);
         Inicializar();
         Listeners();
+
+        btnVoltar.setOnClickListener(this);
+        btnConfirm.setOnClickListener(this);
     }
 
 
@@ -84,9 +92,12 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_Confirm:
+                Toast.makeText(getApplicationContext(), "AAAAAAAAAA", Toast.LENGTH_SHORT).show();
                  SalvarDados();
                 break;
             case R.id.btn_back_Criar_Main:
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
@@ -96,8 +107,11 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
     public void SalvarDados(){
         if(DadosValidos()) {
             PreencherFicha();
+            Toast.makeText(getApplicationContext(), "EntrouSalvar1", Toast.LENGTH_SHORT).show();
             DataBase db = new DataBase(ficha);
+            Toast.makeText(getApplicationContext(), "Criou", Toast.LENGTH_SHORT).show();
             db.Salvar(ficha);
+            Toast.makeText(getApplicationContext(), "Saiu", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(getApplicationContext(), "Preencha todos os dados", Toast.LENGTH_LONG).show();
         }
@@ -129,18 +143,18 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         ficha.setSorte(Integer.parseInt(txt_num_Sorte.getText().toString()));
         ficha.setFurtividade(Integer.parseInt(txt_num_Furtividade.getText().toString()));
 
-        ficha.setForcaExtra(Integer.parseInt(txt_num_Forca_Extra.getText().toString()));
-        ficha.setInteligenciaExtra(Integer.parseInt(txt_num_Inteligencia_Extra.getText().toString()));
-        ficha.setAgilidadeExtra(Integer.parseInt(txt_num_Agilidade_Extra.getText().toString()));
-        ficha.setDesvioExtra(Integer.parseInt(txt_num_Desvio_Extra.getText().toString()));
-        ficha.setDefesaExtra(Integer.parseInt(txt_num_Defesa_Extra.getText().toString()));
-        ficha.setDeslocamentoExtra(Integer.parseInt(txt_num_Deslocamento_Extra.getText().toString()));
-        ficha.setConhecimentoExtra(Integer.parseInt(txt_num_Conhecimento_Extra.getText().toString()));
-        ficha.setCarismaExtra(Integer.parseInt(txt_num_Carisma_Extra.getText().toString()));
-        ficha.setPrecisaoExtra(Integer.parseInt(txt_num_Precisao_Extra.getText().toString()));
-        ficha.setPercepcaoExtra(Integer.parseInt(txt_num_Percepcao_Extra.getText().toString()));
-        ficha.setSorteExtra(Integer.parseInt(txt_num_Sorte_Extra.getText().toString()));
-        ficha.setFurtividadeExtra(Integer.parseInt(txt_num_Furtividade_Extra.getText().toString()));
+        ficha.setForcaExtra((txt_num_Forca_Extra.getText()!=null) ? Integer.parseInt(txt_num_Forca_Extra.getText().toString()) :0);
+        ficha.setInteligenciaExtra((txt_num_Inteligencia_Extra.getText()!=null) ? Integer.parseInt(txt_num_Inteligencia_Extra.getText().toString()) : 0);
+        ficha.setAgilidadeExtra((txt_num_Agilidade_Extra.getText()!=null) ? Integer.parseInt(txt_num_Agilidade_Extra.getText().toString()) : 0);
+        ficha.setDesvioExtra((txt_num_Desvio_Extra.getText()!=null) ? Integer.parseInt(txt_num_Desvio_Extra.getText().toString()) : 0);
+        ficha.setDefesaExtra((txt_num_Defesa_Extra.getText()!=null) ?Integer.parseInt(txt_num_Defesa_Extra.getText().toString()) : 0);
+        ficha.setDeslocamentoExtra((txt_num_Deslocamento_Extra.getText()!=null) ? Integer.parseInt(txt_num_Deslocamento_Extra.getText().toString()) : 0);
+        ficha.setConhecimentoExtra((txt_num_Conhecimento_Extra.getText()!=null) ? Integer.parseInt(txt_num_Conhecimento_Extra.getText().toString()) : 0);
+        ficha.setCarismaExtra((txt_num_Carisma_Extra.getText()!=null) ? Integer.parseInt(txt_num_Carisma_Extra.getText().toString()) : 0);
+        ficha.setPrecisaoExtra((txt_num_Precisao_Extra.getText()!=null) ? Integer.parseInt(txt_num_Precisao_Extra.getText().toString()) : 0);
+        ficha.setPercepcaoExtra((txt_num_Percepcao_Extra.getText()!=null) ? Integer.parseInt(txt_num_Percepcao_Extra.getText().toString()) : 0);
+        ficha.setSorteExtra((txt_num_Sorte_Extra.getText()!=null) ? Integer.parseInt(txt_num_Sorte_Extra.getText().toString()) : 0);
+        ficha.setFurtividadeExtra((txt_num_Furtividade_Extra.getText()!=null) ? Integer.parseInt(txt_num_Furtividade_Extra.getText().toString()) : 0);
     }
     //endregion
     //region Validando dados
@@ -163,6 +177,8 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
     //region Inicializando atributos ( findViewById())
     public void Inicializar(){
 
+        btnConfirm = findViewById(R.id.btn_Confirm);
+        btnVoltar = findViewById(R.id.btn_back_Criar_Main);
         edt_Nome = findViewById(R.id.edt_Nome);
         edt_Classe = findViewById(R.id.edt_Classe);
         edt_Nivel = findViewById(R.id.edt_Nivel);

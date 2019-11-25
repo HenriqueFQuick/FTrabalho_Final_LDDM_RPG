@@ -2,8 +2,13 @@ package com.example.app_fichas_rpg;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.icu.text.UnicodeSetSpanner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase extends Activity {
 
@@ -13,11 +18,13 @@ public class DataBase extends Activity {
         _ficha = ficha;
     }
 
+    public DataBase(){}
+
     public void Salvar(Ficha ficha){
 
         //Apaga o banco de dadados
         //getApplicationContext().deleteDatabase("db_rpg");
-
+        Toast.makeText(getApplicationContext(), "EntrouSalvar", Toast.LENGTH_SHORT).show();
         try {
             SQLiteDatabase bancoDeDados = getApplicationContext().openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
 
@@ -35,6 +42,7 @@ public class DataBase extends Activity {
 
             //inserir dados na tabela
             bancoDeDados.execSQL(insert);
+            Toast.makeText(getApplicationContext(), "Inserido com sucesso", Toast.LENGTH_LONG).show();
 
         }catch (Exception e){
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -42,16 +50,97 @@ public class DataBase extends Activity {
 
     }
 
-    public boolean Delete(Ficha ficha){
-        return true;
-    }
+    public boolean Delete(Ficha ficha) {
+        try {
+            SQLiteDatabase bancoDeDados = getApplicationContext().openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
 
+            String delete = "DELETE FROM Ficha " +
+                    "WHERE id = " + ficha.getId();
+
+            bancoDeDados.execSQL(delete);
+            return true;
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
     public void Alterar(Ficha ficha){
 
     }
 
     public Ficha Pesquisar(){
         return null;
+    }
+
+    public List<Ficha> Listar(){
+
+        Ficha ficha;
+        List<Ficha> fichas = new ArrayList<Ficha>();
+
+        try{
+            SQLiteDatabase bancoDeDados = getApplicationContext().openOrCreateDatabase("db_rpg" , Context.MODE_PRIVATE, null);
+
+            //recuperar dados da tabela
+            Cursor cursor = bancoDeDados.rawQuery("SELECT id, nome, classe, raca, vidaTotal, vidaAtual, dano, forca, forcaExtra, inteligencia, inteligenciaExtra, agilidade, agilidadeExtra, desvio, desvioExtra, defesa, defesaExtra, deslocamento, deslocamentoExtra, conhecimento, conhecimentoExtra, carisma, carismaExtra, precisao, precisaoExtra, percepcao, percepcaoExtra, sorte, sorteExtra, furtividade, furtividadeExtra FROM Ficha", null);
+
+            int id = cursor.getColumnIndex("id");
+            int nome = cursor.getColumnIndex("nome");
+            int classe = cursor.getColumnIndex("classe");
+            int raca = cursor.getColumnIndex("raca");
+            int nivel = cursor.getColumnIndex("nivel");
+            int vidaTotal = cursor.getColumnIndex("vidaTotal");
+            int vidaAtual = cursor.getColumnIndex("vidaAtual");
+            int dano = cursor.getColumnIndex("dano");
+            int forca = cursor.getColumnIndex("forca");
+            int forcaExtra = cursor.getColumnIndex("forcaExtra");
+            int inteligencia = cursor.getColumnIndex("inteligencia");
+            int inteligenciaExtra = cursor.getColumnIndex("inteligenciaExtra");
+            int agilidade = cursor.getColumnIndex("agilidade");
+            int agilidadeExtra = cursor.getColumnIndex("agilidadeExtra");
+            int desvio = cursor.getColumnIndex("desvio");
+            int desvioExtra = cursor.getColumnIndex("desvioExtra");
+            int defesa = cursor.getColumnIndex("defesa");
+            int defesaExtra = cursor.getColumnIndex("defesaExtra");
+            int deslocamento = cursor.getColumnIndex("deslocamento");
+            int deslocamentoExtra = cursor.getColumnIndex("deslocamentoExtra");
+            int conhecimento = cursor.getColumnIndex("conhecimento");
+            int conhecimentoExtra = cursor.getColumnIndex("conhecimentoExtra");
+            int carisma = cursor.getColumnIndex("carisma");
+            int carismaExtra = cursor.getColumnIndex("carismaExtra");
+            int precisao = cursor.getColumnIndex("precisao");
+            int precisaoExtra = cursor.getColumnIndex("precisaoExtra");
+            int percepcao = cursor.getColumnIndex("percepcao");
+            int percepcaoExtra = cursor.getColumnIndex("percepcaoExtra");
+            int sorte = cursor.getColumnIndex("sorte");
+            int sorteExtra = cursor.getColumnIndex("sorteExtra");
+            int furtividade = cursor.getColumnIndex("furtividade");
+            int furtividadeExtra = cursor.getColumnIndex("furtividadeExtra");
+
+            cursor.moveToFirst();
+            while (cursor != null) {
+
+                ficha = new Ficha ( Integer.parseInt(cursor.getString(id)), cursor.getString(nome), cursor.getString(classe),
+                                    cursor.getString(raca), Integer.parseInt(cursor.getString(nivel)), Double.parseDouble(cursor.getString(vidaTotal)), Double.parseDouble(cursor.getString(vidaAtual)),
+                                    Double.parseDouble(cursor.getString(dano)), Integer.parseInt(cursor.getString(forca)), Integer.parseInt(cursor.getString(forcaExtra)),
+                                    Integer.parseInt(cursor.getString(inteligencia)), Integer.parseInt(cursor.getString(inteligenciaExtra)), Integer.parseInt(cursor.getString(agilidade)),
+                                    Integer.parseInt(cursor.getString(agilidadeExtra)), Integer.parseInt(cursor.getString(desvio)), Integer.parseInt(cursor.getString(desvioExtra)),
+                                    Integer.parseInt(cursor.getString(defesa)), Integer.parseInt(cursor.getString(defesaExtra)), Integer.parseInt(cursor.getString(deslocamento)),
+                                    Integer.parseInt(cursor.getString(deslocamentoExtra)), Integer.parseInt(cursor.getString(conhecimento)), Integer.parseInt(cursor.getString(conhecimentoExtra)),
+                                    Integer.parseInt(cursor.getString(carisma)), Integer.parseInt(cursor.getString(carismaExtra)), Integer.parseInt(cursor.getString(precisao)),
+                                    Integer.parseInt(cursor.getString(precisaoExtra)), Integer.parseInt(cursor.getString(percepcao)), Integer.parseInt(cursor.getString(percepcaoExtra)),
+                                    Integer.parseInt(cursor.getString(sorte)), Integer.parseInt(cursor.getString(sorteExtra)), Integer.parseInt(cursor.getString(furtividade)),
+                                    Integer.parseInt(cursor.getString(furtividadeExtra)) );
+                ficha.setId(Integer.parseInt(cursor.getString(id)));
+                fichas.add(ficha);
+                ficha = null;
+
+                cursor.moveToNext();
+                //move para o próximo registro
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return fichas;
     }
 
 }

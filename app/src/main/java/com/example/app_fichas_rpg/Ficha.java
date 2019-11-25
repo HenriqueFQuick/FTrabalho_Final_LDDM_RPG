@@ -2,7 +2,10 @@ package com.example.app_fichas_rpg;
 
 public class Ficha {
 
+
     //region Atributos
+    public int id=0;
+
     public String nome ="";
     public String classe="";
     public String raca="";
@@ -75,7 +78,7 @@ public class Ficha {
         this.furtividade = furtividade;
     }
     //endregion
-    //region Construtor com todos os atributos
+    //region Construtor com todos os atributos menos id
     public Ficha(String nome, String classe, String raca, double vidaTotal, double vidaAtual, double dano, int forca, int forcaExtra, int inteligencia, int inteligenciaExtra, int agilidade, int agilidadeExtra, int desvio, int desvioExtra, int defesa, int defesaExtra, int deslocamento, int deslocamentoExtra, int conhecimento, int conhecimentoExtra, int carisma, int carismaExtra, int precisao, int precisaoExtra, int percepcao, int percepcaoExtra, int sorte, int sorteExtra, int furtividade, int furtividadeExtra) {
         this.nome = nome;
         this.classe = classe;
@@ -109,8 +112,47 @@ public class Ficha {
         this.furtividadeExtra = furtividadeExtra;
     }
     //endregion
+    //region Construtor com todos os atributos menos id
+    public Ficha(int id, String nome, String classe, String raca, int nivel, double vidaTotal, double vidaAtual, double dano, int forca, int forcaExtra, int inteligencia, int inteligenciaExtra, int agilidade, int agilidadeExtra, int desvio, int desvioExtra, int defesa, int defesaExtra, int deslocamento, int deslocamentoExtra, int conhecimento, int conhecimentoExtra, int carisma, int carismaExtra, int precisao, int precisaoExtra, int percepcao, int percepcaoExtra, int sorte, int sorteExtra, int furtividade, int furtividadeExtra) {
+        this.id = id;
+        this.nome = nome;
+        this.classe = classe;
+        this.raca = raca;
+        this.nivel = nivel;
+        this.vidaTotal = vidaTotal;
+        this.vidaAtual = vidaAtual;
+        this.dano = dano;
+        this.forca = forca;
+        this.forcaExtra = forcaExtra;
+        this.inteligencia = inteligencia;
+        this.inteligenciaExtra = inteligenciaExtra;
+        this.agilidade = agilidade;
+        this.agilidadeExtra = agilidadeExtra;
+        this.desvio = desvio;
+        this.desvioExtra = desvioExtra;
+        this.defesa = defesa;
+        this.defesaExtra = defesaExtra;
+        this.deslocamento = deslocamento;
+        this.deslocamentoExtra = deslocamentoExtra;
+        this.conhecimento = conhecimento;
+        this.conhecimentoExtra = conhecimentoExtra;
+        this.carisma = carisma;
+        this.carismaExtra = carismaExtra;
+        this.precisao = precisao;
+        this.precisaoExtra = precisaoExtra;
+        this.percepcao = percepcao;
+        this.percepcaoExtra = percepcaoExtra;
+        this.sorte = sorte;
+        this.sorteExtra = sorteExtra;
+        this.furtividade = furtividade;
+        this.furtividadeExtra = furtividadeExtra;
+    }
+    //endregion
+
 
     //region Getters
+    public int getId(){return this.id;  }
+
     public String getNome() {return nome;   }
 
     public String getClasse() {return classe;    }
@@ -174,6 +216,7 @@ public class Ficha {
     public int getFurtividadeExtra() {return furtividadeExtra;}
     //endregion
     //region Setters
+    public void setId(int id){this.id = id; }
     public void setNome(String nome) {this.nome = nome;}
 
     public void setClasse(String classe) {this.classe = classe;}
