@@ -122,8 +122,8 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         ficha.setClasse(edt_Classe.getText().toString());
         ficha.setNivel(Integer.parseInt(edt_Nivel.getText().toString()));
         ficha.setRaca(edt_Raca.getText().toString());
-        ficha.setVidaTotal(Integer.parseInt(edt_HP_Total.getText().toString()));
-        ficha.setVidaAtual(Integer.parseInt(edt_HP_Atual.getText().toString()));
+        ficha.setVidaTotal(Double.parseDouble(edt_HP_Total.getText().toString()));
+        ficha.setVidaAtual(Double.parseDouble(edt_HP_Atual.getText().toString()));
         ficha.setDano(Double.parseDouble(edt_Dano.getText().toString()));
 
         ficha.setForca(Integer.parseInt(txt_num_Forca.getText().toString()));

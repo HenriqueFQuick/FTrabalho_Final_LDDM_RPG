@@ -32,7 +32,7 @@ public class DataBase extends Activity {
         try {
             SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
 
-            bancoDeDados.execSQL("CREATE TABLE IF NOT EXISTS Ficha(id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(40), classe VARCHAR(40), raca VARCHAR(40), nivel INT, vidaTotal DOUBLE, vidaAtual DOUBLE, dano INT, forca INT, forcaExtra INT, inteligencia INT, inteligenciaExtra INT, agilidade INT, agilidadeExtra INT, desvio INT, desvioExtra INT, defesa INT, defesaExtra INT, deslocamento INT, deslocamentoExtra INT, conhecimento INT, conhecimentoExtra INT, carisma INT, carismaExtra INT, precisao INT, precisaoExtra INT, percepcao INT, percepcaoExtra INT, sorte INT, sorteExtra INT, furtividade INT, furtividadeExtra INT) ");
+            bancoDeDados.execSQL("CREATE TABLE IF NOT EXISTS Ficha(id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(40), classe VARCHAR(40), raca VARCHAR(40), nivel INT, vidaTotal DOUBLE, vidaAtual DOUBLE, dano DOUBLE, forca INT, forcaExtra INT, inteligencia INT, inteligenciaExtra INT, agilidade INT, agilidadeExtra INT, desvio INT, desvioExtra INT, defesa INT, defesaExtra INT, deslocamento INT, deslocamentoExtra INT, conhecimento INT, conhecimentoExtra INT, carisma INT, carismaExtra INT, precisao INT, precisaoExtra INT, percepcao INT, percepcaoExtra INT, sorte INT, sorteExtra INT, furtividade INT, furtividadeExtra INT) ");
 
             String insert = "INSERT INTO Ficha " +
                     "(nome, classe, raca, nivel, vidaTotal, vidaAtual, dano, forca, forcaExtra, inteligencia, inteligenciaExtra, agilidade, agilidadeExtra, desvio, desvioExtra, defesa, defesaExtra, deslocamento, deslocamentoExtra, conhecimento, conhecimentoExtra, carisma, carismaExtra, precisao, precisaoExtra, percepcao, percepcaoExtra, sorte, sorteExtra, furtividade, furtividadeExtra) VALUES " +
@@ -49,8 +49,7 @@ public class DataBase extends Activity {
             Toast.makeText(_context, "Inserido com sucesso", Toast.LENGTH_LONG).show();
 
         }catch (Exception e){
-            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+            Toast.makeText(_context, e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
     }
@@ -63,6 +62,7 @@ public class DataBase extends Activity {
                     "WHERE id = " + ficha.getId();
 
             bancoDeDados.execSQL(delete);
+            Toast.makeText(_context, "Deletado com sucesso", Toast.LENGTH_LONG).show();
             return true;
         }catch (Exception e){
             Toast.makeText(_context, e.getMessage(), Toast.LENGTH_LONG).show();
@@ -70,10 +70,6 @@ public class DataBase extends Activity {
         }
     }
     public void Atualizar(Ficha ficha){    }
-
-    public Ficha Pesquisar(){
-        return null;
-    }
 
     public ArrayList<Ficha> Listar(){
 
