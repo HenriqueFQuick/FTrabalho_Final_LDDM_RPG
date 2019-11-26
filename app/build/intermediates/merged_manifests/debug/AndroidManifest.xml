@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.app_fichas_rpg.RecuperarFichaActivity" />
         <activity android:name="com.example.app_fichas_rpg.ListarFichaActivity" />
         <activity android:name="com.example.app_fichas_rpg.CriarFichaActivity" />
         <activity android:name="com.example.app_fichas_rpg.MainActivity" >

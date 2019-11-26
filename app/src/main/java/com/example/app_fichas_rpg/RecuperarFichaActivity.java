@@ -11,8 +11,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CriarFichaActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class RecuperarFichaActivity extends AppCompatActivity implements View.OnClickListener{
     //region Atributos
     public EditText edt_Nome;
     public EditText edt_Classe;
@@ -72,47 +71,54 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
 
     public Ficha ficha = null;
 
-    public Button btnConfirm;
+    public Button btnAtualizar;
     public Button btnVoltar;
-    //endregion
+    public Button btnDelete;
 
+    public Ficha _ficha;
+    //endregion
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_criar_ficha);
+        setContentView(R.layout.activity_recuperar_ficha);
+        _ficha = (Ficha)getIntent().getSerializableExtra("ficha");
         Inicializar();
+        PreencherTela();
         Listeners();
 
-        btnVoltar.setOnClickListener(this);
-        btnConfirm.setOnClickListener(this);
-    }
 
+        btnAtualizar.setOnClickListener(this);
+        btnVoltar.setOnClickListener(this);
+        btnDelete.setOnClickListener(this);
+    }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.btn_Confirm:
-                 SalvarDados();
+            case R.id.btn_Atualizar:
+                Atualizar();
                 break;
-            case R.id.btn_back_Criar_Main:
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            case R.id.btn_back_Recuperar_Main:
+                Intent intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_Delete:
+                //DataBase db = new DataBase(this.getApplicationContext());
+                //db.Delete(ficha);
                 break;
             default:
                 break;
         }
     }
-
-    public void SalvarDados(){
+    public void Atualizar(){
         if(DadosValidos()) {
             PreencherFicha();
             DataBase db = new DataBase(ficha, this.getApplicationContext());
-            db.Salvar(ficha);
+            db.Atualizar(ficha);
         }else{
             Toast.makeText(getApplicationContext(), "Preencha todos os dados", Toast.LENGTH_LONG).show();
         }
     }
-
     //region Preencher dados
     public void PreencherFicha(){
 
@@ -170,11 +176,52 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         return dadosValidos;
     }
     //endregion
+
+    //region Preenchendo dados na tela
+    public void PreencherTela(){
+        edt_Nome.setText(_ficha.getNome());
+        edt_Classe.setText(_ficha.getClasse());
+        edt_Nivel.setText(String.valueOf(_ficha.getNivel()));
+        edt_Raca.setText(_ficha.getRaca());
+        edt_HP_Atual.setText(String.valueOf(_ficha.getVidaAtual()));
+        edt_HP_Total.setText(String.valueOf(_ficha.getVidaTotal()));
+        edt_Dano.setText(String.valueOf(_ficha.getDano()));
+
+        txt_num_Forca.setText(String.valueOf(_ficha.getForca()));
+        txt_num_Inteligencia.setText(String.valueOf(_ficha.getInteligencia()));
+        txt_num_Agilidade.setText(String.valueOf(_ficha.getAgilidade()));
+        txt_num_Desvio.setText(String.valueOf(_ficha.getDesvio()));
+        txt_num_Defesa.setText(String.valueOf(_ficha.getDefesa()));
+        txt_num_Deslocamento.setText(String.valueOf(_ficha.getDeslocamento()));
+        txt_num_Conhecimento.setText(String.valueOf(_ficha.getConhecimento()));
+        txt_num_Carisma.setText(String.valueOf(_ficha.getCarisma()));
+        txt_num_Precisao.setText(String.valueOf(_ficha.getPrecisao()));
+        txt_num_Percepcao.setText(String.valueOf(_ficha.getPercepcao()));
+        txt_num_Sorte.setText(String.valueOf(_ficha.getSorte()));
+        txt_num_Furtividade.setText(String.valueOf(_ficha.getFurtividade()));
+
+        txt_num_Forca_Extra.setText(String.valueOf(_ficha.getForcaExtra()));
+        txt_num_Inteligencia_Extra.setText(String.valueOf(_ficha.getInteligenciaExtra()));
+        txt_num_Agilidade_Extra.setText(String.valueOf(_ficha.getAgilidadeExtra()));
+        txt_num_Desvio_Extra.setText(String.valueOf(_ficha.getDesvioExtra()));
+        txt_num_Defesa_Extra.setText(String.valueOf(_ficha.getDefesaExtra()));
+        txt_num_Deslocamento_Extra.setText(String.valueOf(_ficha.getDeslocamentoExtra()));
+        txt_num_Conhecimento_Extra.setText(String.valueOf(_ficha.getConhecimentoExtra()));
+        txt_num_Carisma_Extra.setText(String.valueOf(_ficha.getCarismaExtra()));
+        txt_num_Precisao_Extra.setText(String.valueOf(_ficha.getPrecisaoExtra()));
+        txt_num_Percepcao_Extra.setText(String.valueOf(_ficha.getPercepcaoExtra()));
+        txt_num_Sorte_Extra.setText(String.valueOf(_ficha.getSorteExtra()));
+        txt_num_Furtividade_Extra.setText(String.valueOf(_ficha.getFurtividadeExtra()));
+
+        }
+    //endregion
+
     //region Inicializando atributos ( findViewById())
     public void Inicializar(){
 
-        btnConfirm = findViewById(R.id.btn_Confirm);
-        btnVoltar = findViewById(R.id.btn_back_Criar_Main);
+        btnAtualizar = findViewById(R.id.btn_Atualizar);
+        btnVoltar = findViewById(R.id.btn_back_Recuperar_Main);
+        btnDelete = findViewById(R.id.btn_Delete);
         edt_Nome = findViewById(R.id.edt_Nome);
         edt_Classe = findViewById(R.id.edt_Classe);
         edt_Nivel = findViewById(R.id.edt_Nivel);
@@ -440,7 +487,7 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
             }
         });
     }
+
+
     //endregion
-
-
 }

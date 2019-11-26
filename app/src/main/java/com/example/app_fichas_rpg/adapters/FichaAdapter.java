@@ -1,6 +1,7 @@
 package com.example.app_fichas_rpg.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_fichas_rpg.Ficha;
+import com.example.app_fichas_rpg.ListarFichaActivity;
 import com.example.app_fichas_rpg.R;
+import com.example.app_fichas_rpg.RecuperarFichaActivity;
 
 import java.util.List;
 
@@ -25,9 +28,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.ViewHolder> 
     public FichaAdapter(List<Ficha> fichas, Context mContext) {
 
         this.fichas = fichas;
-
         this.mContext = mContext;
-
     }
 
 
@@ -47,15 +48,16 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.name.setText(fichas.get(position).getNome());
-        holder.nivel.setText(fichas.get(position).getNivel());
+        holder.nivel.setText(fichas.get(position).getNivel()+"");
 
         holder.container.setOnClickListener(new View.OnClickListener() {
 
             @Override
 
             public void onClick(View v) {
-
-
+                Intent intent = new Intent(mContext, RecuperarFichaActivity.class);
+                intent.putExtra("ficha", fichas.get(position));
+                mContext.startActivity(intent);
             }
 
         });

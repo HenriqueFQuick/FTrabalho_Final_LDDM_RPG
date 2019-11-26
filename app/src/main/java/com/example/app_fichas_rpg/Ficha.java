@@ -1,6 +1,8 @@
 package com.example.app_fichas_rpg;
 
-public class Ficha {
+import java.io.Serializable;
+
+public class Ficha implements Serializable {
 
 
     //region Atributos

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.UnicodeSetSpanner;
+import android.provider.ContactsContract;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -13,46 +14,50 @@ import java.util.List;
 public class DataBase extends Activity {
 
     public Ficha _ficha = null;
+    public Context _context;
 
-    public DataBase(Ficha ficha){
+    public DataBase(Ficha ficha, Context context){
         _ficha = ficha;
+        _context = context;
     }
-
+    public DataBase(Context context){
+        _context = context;
+    }
     public DataBase(){}
 
     public void Salvar(Ficha ficha){
 
         //Apaga o banco de dadados
-        //getApplicationContext().deleteDatabase("db_rpg");
-        Toast.makeText(getApplicationContext(), "EntrouSalvar", Toast.LENGTH_SHORT).show();
+        //_context.deleteDatabase("db_rpg");
         try {
-            SQLiteDatabase bancoDeDados = getApplicationContext().openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
+            SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
 
-            bancoDeDados.execSQL("CREATE TABLE IF NOT EXISTS Ficha(id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(40), classe VARCHAR(40), raca VARCHAR(40), vidaTotal DOUBLE, vidaAtual DOUBLE, dano INT, forca INT, forcaExtra INT, inteligencia INT, inteligenciaExtra INT, agilidade INT, agilidadeExtra INT, desvio INT, desvioExtra INT, defesa INT, defesaExtra INT, deslocamento INT, deslocamentoExtra INT, conhecimento INT, conhecimentoExtra INT, carisma INT, carismaExtra INT, precisao INT, precisaoExtra INT, percepcao INT, percepcaoExtra INT, sorte INT, sorteExtra INT, furtividade INT, furtividadeExtra INT) ");
+            bancoDeDados.execSQL("CREATE TABLE IF NOT EXISTS Ficha(id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR(40), classe VARCHAR(40), raca VARCHAR(40), nivel INT, vidaTotal DOUBLE, vidaAtual DOUBLE, dano INT, forca INT, forcaExtra INT, inteligencia INT, inteligenciaExtra INT, agilidade INT, agilidadeExtra INT, desvio INT, desvioExtra INT, defesa INT, defesaExtra INT, deslocamento INT, deslocamentoExtra INT, conhecimento INT, conhecimentoExtra INT, carisma INT, carismaExtra INT, precisao INT, precisaoExtra INT, percepcao INT, percepcaoExtra INT, sorte INT, sorteExtra INT, furtividade INT, furtividadeExtra INT) ");
 
             String insert = "INSERT INTO Ficha " +
-                    "(nome, classe, raca, vidaTotal, vidaAtual, dano, forca, forcaExtra, inteligencia, inteligenciaExtra, agilidade, agilidadeExtra, desvio, desvioExtra, defesa, defesaExtra, deslocamento, deslocamentoExtra, conhecimento, conhecimentoExtra, carisma, carismaExtra, precisao, precisaoExtra, percepcao, percepcaoExtra, sorte, sorteExtra, furtividade, furtividadeExtra) VALUES " +
-                    "('" + ficha.getNome() + "',''" + ficha.getClasse() + "',''" + ficha.getRaca() + "',''" + ficha.getNivel() + "',''" + ficha.getVidaTotal() +
-                    "',''" + ficha.getVidaAtual() + "',''" + ficha.getDano() + "',''" + ficha.getForca() + "',''" + ficha.getForcaExtra() + "',''" + ficha.getInteligencia() +
-                    "',''" + ficha.getInteligenciaExtra() + "',''" + ficha.getAgilidade() + "',''" + ficha.getAgilidadeExtra() + "',''" + ficha.getDesvio() + "',''" + ficha.getDesvioExtra() +
-                    "',''" + ficha.getDefesa() + "',''" + ficha.getDefesaExtra() + "',''" + ficha.getDeslocamento() + "',''" + ficha.getDeslocamentoExtra() + "',''" + ficha.getConhecimento() +
-                    "',''" + ficha.getConhecimentoExtra() + "',''" + ficha.getCarisma() + "',''" + ficha.getCarismaExtra() + "',''" + ficha.getPrecisao() + "',''" + ficha.getPrecisaoExtra() +
-                    "',''" + ficha.getPercepcao() + "',''" + ficha.getPercepcaoExtra() + "',''" + ficha.getSorte() + "',''" + ficha.getSorteExtra() + "',''" + ficha.getFurtividade() +
-                    "',''" + ficha.getFurtividadeExtra() + "')";
+                    "(nome, classe, raca, nivel, vidaTotal, vidaAtual, dano, forca, forcaExtra, inteligencia, inteligenciaExtra, agilidade, agilidadeExtra, desvio, desvioExtra, defesa, defesaExtra, deslocamento, deslocamentoExtra, conhecimento, conhecimentoExtra, carisma, carismaExtra, precisao, precisaoExtra, percepcao, percepcaoExtra, sorte, sorteExtra, furtividade, furtividadeExtra) VALUES " +
+                    "('" + ficha.getNome() + "','" + ficha.getClasse() + "','" + ficha.getRaca() + "','" + ficha.getNivel() + "','" + ficha.getVidaTotal() +
+                    "','" + ficha.getVidaAtual() + "','" + ficha.getDano() + "','" + ficha.getForca() + "','" + ficha.getForcaExtra() + "','" + ficha.getInteligencia() +
+                    "','" + ficha.getInteligenciaExtra() + "','" + ficha.getAgilidade() + "','" + ficha.getAgilidadeExtra() + "','" + ficha.getDesvio() + "','" + ficha.getDesvioExtra() +
+                    "','" + ficha.getDefesa() + "','" + ficha.getDefesaExtra() + "','" + ficha.getDeslocamento() + "','" + ficha.getDeslocamentoExtra() + "','" + ficha.getConhecimento() +
+                    "','" + ficha.getConhecimentoExtra() + "','" + ficha.getCarisma() + "','" + ficha.getCarismaExtra() + "','" + ficha.getPrecisao() + "','" + ficha.getPrecisaoExtra() +
+                    "','" + ficha.getPercepcao() + "','" + ficha.getPercepcaoExtra() + "','" + ficha.getSorte() + "','" + ficha.getSorteExtra() + "','" + ficha.getFurtividade() +
+                    "','" + ficha.getFurtividadeExtra() + "')";
 
             //inserir dados na tabela
             bancoDeDados.execSQL(insert);
-            Toast.makeText(getApplicationContext(), "Inserido com sucesso", Toast.LENGTH_LONG).show();
+            Toast.makeText(_context, "Inserido com sucesso", Toast.LENGTH_LONG).show();
 
         }catch (Exception e){
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
 
     }
 
     public boolean Delete(Ficha ficha) {
         try {
-            SQLiteDatabase bancoDeDados = getApplicationContext().openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
+            SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
 
             String delete = "DELETE FROM Ficha " +
                     "WHERE id = " + ficha.getId();
@@ -60,28 +65,25 @@ public class DataBase extends Activity {
             bancoDeDados.execSQL(delete);
             return true;
         }catch (Exception e){
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(_context, e.getMessage(), Toast.LENGTH_LONG).show();
             return false;
         }
     }
-    public void Alterar(Ficha ficha){
-
-    }
+    public void Atualizar(Ficha ficha){    }
 
     public Ficha Pesquisar(){
         return null;
     }
 
-    public List<Ficha> Listar(){
+    public ArrayList<Ficha> Listar(){
 
         Ficha ficha;
-        List<Ficha> fichas = new ArrayList<Ficha>();
+        ArrayList<Ficha> fichas = new ArrayList<Ficha>();
 
         try{
-            SQLiteDatabase bancoDeDados = getApplicationContext().openOrCreateDatabase("db_rpg" , Context.MODE_PRIVATE, null);
-
+            SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
             //recuperar dados da tabela
-            Cursor cursor = bancoDeDados.rawQuery("SELECT id, nome, classe, raca, vidaTotal, vidaAtual, dano, forca, forcaExtra, inteligencia, inteligenciaExtra, agilidade, agilidadeExtra, desvio, desvioExtra, defesa, defesaExtra, deslocamento, deslocamentoExtra, conhecimento, conhecimentoExtra, carisma, carismaExtra, precisao, precisaoExtra, percepcao, percepcaoExtra, sorte, sorteExtra, furtividade, furtividadeExtra FROM Ficha", null);
+            Cursor cursor = bancoDeDados.rawQuery("SELECT id, nome, classe, raca, nivel, vidaTotal, vidaAtual, dano, forca, forcaExtra, inteligencia, inteligenciaExtra, agilidade, agilidadeExtra, desvio, desvioExtra, defesa, defesaExtra, deslocamento, deslocamentoExtra, conhecimento, conhecimentoExtra, carisma, carismaExtra, precisao, precisaoExtra, percepcao, percepcaoExtra, sorte, sorteExtra, furtividade, furtividadeExtra FROM Ficha", null);
 
             int id = cursor.getColumnIndex("id");
             int nome = cursor.getColumnIndex("nome");

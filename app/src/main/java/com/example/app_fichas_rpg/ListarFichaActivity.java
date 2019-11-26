@@ -10,18 +10,19 @@ import android.view.View;
 
 import com.example.app_fichas_rpg.adapters.FichaAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListarFichaActivity extends AppCompatActivity {
 
-    public List<Ficha> fichas;
+    public ArrayList<Ficha> fichas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_ficha);
 
-        DataBase db = new DataBase();
+        DataBase db = new DataBase(this.getApplicationContext());
 
         fichas = db.Listar();
 
