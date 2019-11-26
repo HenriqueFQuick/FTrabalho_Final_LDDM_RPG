@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,8 +48,9 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+
         holder.name.setText(fichas.get(position).getNome());
-        holder.nivel.setText(fichas.get(position).getNivel()+"");
+        holder.nivel.setText(String.valueOf(fichas.get(position).getNivel()));
 
         holder.container.setOnClickListener(new View.OnClickListener() {
 

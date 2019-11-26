@@ -166,6 +166,8 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         ){
             dadosValidos = false;
         }
+        if(edt_HP_Atual.getText().length() == 0)
+            edt_HP_Atual.setText(edt_HP_Total.getText());
 
         return dadosValidos;
     }

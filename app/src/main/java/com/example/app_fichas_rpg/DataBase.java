@@ -54,22 +54,29 @@ public class DataBase extends Activity {
 
     }
 
-    public boolean Delete(Ficha ficha) {
+    public void Delete(Ficha ficha) {
         try {
             SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
 
             String delete = "DELETE FROM Ficha " +
-                    "WHERE id = " + ficha.getId();
+                    "WHERE id = '" + ficha.getId() + "'";
 
             bancoDeDados.execSQL(delete);
             Toast.makeText(_context, "Deletado com sucesso", Toast.LENGTH_LONG).show();
-            return true;
         }catch (Exception e){
             Toast.makeText(_context, e.getMessage(), Toast.LENGTH_LONG).show();
-            return false;
         }
     }
-    public void Atualizar(Ficha ficha){    }
+
+
+    public void Atualizar(Ficha ficha){
+        try{
+            SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
+            //TODO ATUALIZAR FICHA
+        }catch (Exception e){
+            Toast.makeText(_context, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
 
     public ArrayList<Ficha> Listar(){
 
@@ -115,8 +122,7 @@ public class DataBase extends Activity {
             int furtividadeExtra = cursor.getColumnIndex("furtividadeExtra");
 
             cursor.moveToFirst();
-            while (cursor != null) {
-
+            do{
                 ficha = new Ficha ( Integer.parseInt(cursor.getString(id)), cursor.getString(nome), cursor.getString(classe),
                                     cursor.getString(raca), Integer.parseInt(cursor.getString(nivel)), Double.parseDouble(cursor.getString(vidaTotal)), Double.parseDouble(cursor.getString(vidaAtual)),
                                     Double.parseDouble(cursor.getString(dano)), Integer.parseInt(cursor.getString(forca)), Integer.parseInt(cursor.getString(forcaExtra)),
@@ -131,10 +137,8 @@ public class DataBase extends Activity {
                 ficha.setId(Integer.parseInt(cursor.getString(id)));
                 fichas.add(ficha);
                 ficha = null;
-
-                cursor.moveToNext();
                 //move para o próximo registro
-            }
+            }while(cursor.moveToNext());
         } catch(Exception e) {
             e.printStackTrace();
         }

@@ -18,6 +18,7 @@ import java.util.zip.DataFormatException;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //getApplicationContext().deleteDatabase("db_rpg");
 
         btnCriar = findViewById(R.id.btn_criar);
         btnListar = findViewById(R.id.btn_listar);
