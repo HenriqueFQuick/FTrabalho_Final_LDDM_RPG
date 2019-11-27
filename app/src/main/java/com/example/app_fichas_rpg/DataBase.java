@@ -57,7 +57,6 @@ public class DataBase extends Activity {
     public void Delete(Ficha ficha) {
         try {
             SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
-            System.out.println("ID DA FICHA " + ficha.getId());
             String delete = "DELETE FROM Ficha " +
                     "WHERE id = '" + ficha.getId() + "'";
 
@@ -72,7 +71,19 @@ public class DataBase extends Activity {
     public void Atualizar(Ficha ficha){
         try{
             SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
-            //TODO ATUALIZAR FICHA
+
+            String update = "UPDATE Ficha SET " +
+                    "nome = '" + ficha.getNome() + "', classe = '" + ficha.getClasse() + "', raca = '" + ficha.getRaca() + "',nivel = '" + ficha.getNivel() + "', vidaTotal = '" + ficha.getVidaTotal() +
+                    "',vidaAtual = '" + ficha.getVidaAtual() + "', dano = '" + ficha.getDano() + "', forca = '" + ficha.getForca() + "', forcaExtra = '" + ficha.getForcaExtra() + "',inteligencia = '" + ficha.getInteligencia() +
+                    "', inteligenciaExtra = '" + ficha.getInteligenciaExtra() + "', agilidade = '" + ficha.getAgilidade() + "', agilidadeExtra = '" + ficha.getAgilidadeExtra() + "', desvio = '" + ficha.getDesvio() + "', desvioExtra = '" + ficha.getDesvioExtra() +
+                    "', defesa = '" + ficha.getDefesa() + "', defesaExtra = '" + ficha.getDefesaExtra() + "', deslocamento = '" + ficha.getDeslocamento() + "', deslocamentoExtra = '" + ficha.getDeslocamentoExtra() + "', conhecimento = '" + ficha.getConhecimento() +
+                    "', conhecimentoExtra = '" + ficha.getConhecimentoExtra() + "', carisma = '" + ficha.getCarisma() + "', carismaExtra = '" + ficha.getCarismaExtra() + "', precisao = '" + ficha.getPrecisao() + "', precisaoExtra = '" + ficha.getPrecisaoExtra() +
+                    "', percepcao = '" + ficha.getPercepcao() + "', percepcaoExtra = '" + ficha.getPercepcaoExtra() + "', sorte = '" + ficha.getSorte() + "', sorteExtra = '" + ficha.getSorteExtra() + "', furtividade = '" + ficha.getFurtividade() +
+                    "', furtividadeExtra = '" + ficha.getFurtividadeExtra() +
+                    "' WHERE id = " + ficha.getId() + ";";
+
+            bancoDeDados.execSQL(update);
+            Toast.makeText(_context, "Atualizado com sucesso", Toast.LENGTH_LONG).show();
         }catch (Exception e){
             Toast.makeText(_context, e.getMessage(), Toast.LENGTH_LONG).show();
         }

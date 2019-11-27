@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -90,12 +92,15 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View view) {
+        Intent intent;
         switch (view.getId()){
             case R.id.btn_Confirm:
                  SalvarDados();
+                 intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_back_Criar_Main:
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 break;
             default:
@@ -236,6 +241,45 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
     //endregion
     //region Setando Listeners para cara seekBar para setar valor em um textview
     public void Listeners(){
+        edt_HP_Atual.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(edt_HP_Atual.getText() != null && edt_HP_Atual.getText().toString() != "" && !edt_HP_Atual.getText().toString().isEmpty()) {
+                    if (edt_HP_Total.getText() != null && edt_HP_Total.getText().toString() != "" && !edt_HP_Total.getText().toString().isEmpty()) {
+                        if (Double.parseDouble(edt_HP_Atual.getText().toString()) > Double.parseDouble(edt_HP_Total.getText().toString())) {
+                            edt_HP_Atual.setText(edt_HP_Total.getText());
+                            Toast.makeText(getApplicationContext(), "A vida atual nao pode ser maior que a vida total", Toast.LENGTH_LONG).show();
+                        }
+                    }else{
+                        Toast.makeText(getApplicationContext(),"Digite um valor para a vida total primeiro", Toast.LENGTH_LONG).show();
+                        edt_HP_Atual.setText("");
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        edt_HP_Total.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if ((edt_HP_Total.getText() == null || edt_HP_Total.getText().toString() == "" || edt_HP_Total.getText().toString().isEmpty()) && (edt_HP_Atual.getText() != null && edt_HP_Atual.getText().toString() != "" && !edt_HP_Atual.getText().toString().isEmpty())) {
+                    edt_HP_Atual.setText("");
+                }else{
+                    edt_HP_Atual.setText(edt_HP_Total.getText().toString());
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
         seekBar_forca.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

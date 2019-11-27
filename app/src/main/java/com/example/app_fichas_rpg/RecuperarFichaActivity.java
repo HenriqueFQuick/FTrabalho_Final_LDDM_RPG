@@ -83,7 +83,6 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar_ficha);
         _ficha = (Ficha)getIntent().getSerializableExtra("ficha");
-        System.out.println("ID RECEBIDO: " + getIntent().getExtras().getInt("id", 0));
         _ficha.setId(getIntent().getExtras().getInt("id", 0));
         Inicializar();
         PreencherTela();
@@ -97,12 +96,16 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View view) {
+        Intent intent;
         switch (view.getId()){
             case R.id.btn_Atualizar:
-                Atualizar();
+                if(Atualizar()) {
+                    intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
+                    startActivity(intent);
+                }
                 break;
             case R.id.btn_back_Recuperar_Main:
-                Intent intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
+                intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_Delete:
@@ -116,14 +119,14 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
                 break;
         }
     }
-    public void Atualizar(){
-        if(DadosValidos()) {
+    public boolean Atualizar(){
+        boolean dadosvalidos = DadosValidos();
+        if(dadosvalidos) {
             PreencherFicha();
             DataBase db = new DataBase(ficha, this.getApplicationContext());
             db.Atualizar(ficha);
-        }else{
-            Toast.makeText(getApplicationContext(), "Preencha todos os dados", Toast.LENGTH_LONG).show();
         }
+        return dadosvalidos;
     }
     //region Preencher dados
     public void PreencherFicha(){
@@ -168,19 +171,24 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
     //endregion
     //region Validando dados
     public boolean DadosValidos(){
-        boolean dadosValidos = true;
 
-        if(     (edt_Nome.getText().length() == 0)     ||
-                (edt_Classe.getText().length() == 0)   ||
-                (edt_Nivel.getText().length() == 0)    ||
-                (edt_Raca.getText().length() == 0)     ||
-                (edt_HP_Total.getText().length() == 0) ||
-                (edt_Dano.getText().length() == 0)
+        if(     (edt_Nome.getText() == null || edt_Nome.getText().toString().isEmpty())        ||
+                (edt_Classe.getText() == null || edt_Classe.getText().toString().isEmpty())    ||
+                (edt_Nivel.getText() == null || edt_Nivel.getText().toString().isEmpty())      ||
+                (edt_Raca.getText() == null || edt_Raca.getText().toString().isEmpty())        ||
+                (edt_HP_Total.getText()== null || edt_HP_Total.getText().toString().isEmpty() )||
+                (edt_Dano.getText() == null || edt_Dano.getText().toString().isEmpty())
         ){
-            dadosValidos = false;
+            Toast.makeText(getApplicationContext(), "Preencha todos os dados", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(Double.parseDouble(edt_HP_Atual.getText().toString()) > Double.parseDouble(edt_HP_Total.getText().toString())){
+            edt_HP_Atual.setText(edt_HP_Atual.getText().toString());
+            Toast.makeText(getApplicationContext(), "A vida atual nao pode ser maior que a vida total", Toast.LENGTH_LONG).show();
+            return false;
         }
 
-        return dadosValidos;
+        return true;
     }
     //endregion
 

@@ -50,7 +50,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.name.setText(fichas.get(position).getNome());
-        holder.nivel.setText(String.valueOf(fichas.get(position).getId()));
+        holder.nivel.setText(String.valueOf(fichas.get(position).getNivel()));
 
         holder.container.setOnClickListener(new View.OnClickListener() {
 
