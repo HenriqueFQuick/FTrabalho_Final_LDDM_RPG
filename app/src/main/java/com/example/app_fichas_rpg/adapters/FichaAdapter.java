@@ -50,7 +50,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.name.setText(fichas.get(position).getNome());
-        holder.nivel.setText(String.valueOf(fichas.get(position).getNivel()));
+        holder.nivel.setText(String.valueOf(fichas.get(position).getId()));
 
         holder.container.setOnClickListener(new View.OnClickListener() {
 
@@ -59,6 +59,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.ViewHolder> 
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, RecuperarFichaActivity.class);
                 intent.putExtra("ficha", fichas.get(position));
+                intent.putExtra("id", fichas.get(position).getId());
                 mContext.startActivity(intent);
             }
 

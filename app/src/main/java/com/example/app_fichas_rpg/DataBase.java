@@ -57,7 +57,7 @@ public class DataBase extends Activity {
     public void Delete(Ficha ficha) {
         try {
             SQLiteDatabase bancoDeDados = _context.openOrCreateDatabase("db_rpg", Context.MODE_PRIVATE, null);
-
+            System.out.println("ID DA FICHA " + ficha.getId());
             String delete = "DELETE FROM Ficha " +
                     "WHERE id = '" + ficha.getId() + "'";
 

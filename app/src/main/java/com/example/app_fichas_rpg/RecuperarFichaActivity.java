@@ -76,12 +76,15 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
     public Button btnDelete;
 
     public Ficha _ficha;
+
     //endregion
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar_ficha);
         _ficha = (Ficha)getIntent().getSerializableExtra("ficha");
+        System.out.println("ID RECEBIDO: " + getIntent().getExtras().getInt("id", 0));
+        _ficha.setId(getIntent().getExtras().getInt("id", 0));
         Inicializar();
         PreencherTela();
         Listeners();
@@ -127,6 +130,7 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
 
         ficha = new Ficha();
 
+        ficha.setId(_ficha.getId());
         ficha.setNome(edt_Nome.getText().toString());
         ficha.setClasse(edt_Classe.getText().toString());
         ficha.setNivel(Integer.parseInt(edt_Nivel.getText().toString()));
