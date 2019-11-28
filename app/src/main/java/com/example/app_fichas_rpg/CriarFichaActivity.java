@@ -89,6 +89,12 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         btnConfirm.setOnClickListener(this);
     }
 
+    @Override
+    public void onBackPressed(){
+        this.finish();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onClick(View view) {
@@ -96,10 +102,12 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         switch (view.getId()){
             case R.id.btn_Confirm:
                  SalvarDados();
+                this.finish();
                  intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_back_Criar_Main:
+                this.finish();
                 intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 break;

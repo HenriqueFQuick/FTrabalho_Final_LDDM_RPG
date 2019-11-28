@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -95,23 +96,33 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
     }
 
     @Override
+    public void onBackPressed(){
+        this.finish();
+        Intent intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()){
             case R.id.btn_Atualizar:
                 if(Atualizar()) {
+                    this.finish();
                     intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
                     startActivity(intent);
                 }
                 break;
             case R.id.btn_back_Recuperar_Main:
+                this.finish();
                 intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_Delete:
-                DataBase db = new DataBase(this.getApplicationContext());
+                DataBase db = new DataBase(RecuperarFichaActivity.this);
                 PreencherFicha();
                 db.Delete(ficha);
+                this.finish();
                 intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
                 startActivity(intent);
                 break;
@@ -202,18 +213,43 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
         edt_HP_Total.setText(String.valueOf(_ficha.getVidaTotal()));
         edt_Dano.setText(String.valueOf(_ficha.getDano()));
 
+        Handler seekBarhandler = new Handler();
+
         txt_num_Forca.setText(String.valueOf(_ficha.getForca()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_forca.setProgress(_ficha.getForca()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Inteligencia.setText(String.valueOf(_ficha.getInteligencia()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Inteligencia.setProgress(_ficha.getInteligencia()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Agilidade.setText(String.valueOf(_ficha.getAgilidade()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Agilidade.setProgress(_ficha.getAgilidade()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Desvio.setText(String.valueOf(_ficha.getDesvio()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Desvio.setProgress(_ficha.getDesvio()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Defesa.setText(String.valueOf(_ficha.getDefesa()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Defesa.setProgress(_ficha.getDefesa()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Deslocamento.setText(String.valueOf(_ficha.getDeslocamento()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Deslocamento.setProgress(_ficha.getDeslocamento()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Conhecimento.setText(String.valueOf(_ficha.getConhecimento()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Conhecimento.setProgress(_ficha.getConhecimento()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Carisma.setText(String.valueOf(_ficha.getCarisma()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Carisma.setProgress(_ficha.getCarisma()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Precisao.setText(String.valueOf(_ficha.getPrecisao()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Precisao.setProgress(_ficha.getPrecisao()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Percepcao.setText(String.valueOf(_ficha.getPercepcao()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Percepcao.setProgress(_ficha.getPercepcao()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Sorte.setText(String.valueOf(_ficha.getSorte()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Sorte.setProgress(_ficha.getSorte()+ seekBar_forca.getMax()/2); }});
+
         txt_num_Furtividade.setText(String.valueOf(_ficha.getFurtividade()));
+        seekBarhandler.post(new Runnable() {@Override public void run() {seekBar_Furtividade.setProgress(_ficha.getFurtividade()+ seekBar_forca.getMax()/2); }});
 
         txt_num_Forca_Extra.setText(String.valueOf(_ficha.getForcaExtra()));
         txt_num_Inteligencia_Extra.setText(String.valueOf(_ficha.getInteligenciaExtra()));

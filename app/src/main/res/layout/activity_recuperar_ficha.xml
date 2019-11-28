@@ -900,7 +900,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Confirmar" />
+                android:text="Atualizar" />
 
             <Button
                 android:id="@+id/btn_back_Recuperar_Main"
@@ -914,7 +914,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Voltar" />
+                android:text="Deletar" />
         </LinearLayout>
 
 
