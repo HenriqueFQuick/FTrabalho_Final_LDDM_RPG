@@ -46,7 +46,6 @@ public class DataBase extends Activity {
 
             //inserir dados na tabela
             bancoDeDados.execSQL(insert);
-            Toast.makeText(_context, "FORCA:  "+ficha.getForca(), Toast.LENGTH_LONG).show();
             Toast.makeText(_context, "Inserido com sucesso", Toast.LENGTH_LONG).show();
 
         }catch (Exception e){

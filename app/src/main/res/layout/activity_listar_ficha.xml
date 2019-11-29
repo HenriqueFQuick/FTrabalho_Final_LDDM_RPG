@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListarFichaActivity"
-    android:background="@drawable/d20"
-    android:backgroundTint="#99FFFFFF"
+    android:background="@drawable/background"
+    android:backgroundTint="#CCFFFFFF"
     android:backgroundTintMode="src_over">
 
         <androidx.recyclerview.widget.RecyclerView
