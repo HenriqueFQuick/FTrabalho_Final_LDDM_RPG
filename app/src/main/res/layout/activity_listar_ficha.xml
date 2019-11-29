@@ -4,26 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListarFichaActivity">
+    tools:context=".ListarFichaActivity"
+    android:background="@drawable/d20"
+    android:backgroundTint="#99FFFFFF"
+    android:backgroundTintMode="src_over">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fichas_lista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="230dp"
+            tools:listitem="@layout/list_item_ficha"/>
+
+        <TextView
+            android:id="@+id/txt_not_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Nenhuma ficha encontrada"
+            android:textSize="28dp"
+            android:textColor="#000000"
+            android:visibility="invisible"/>
 
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fichas_lista"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="230dp"
-        tools:listitem="@layout/list_item_ficha"/>
-
-    <Button
-        android:id="@+id/btn_Back_List_Main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="50px"
-        android:text="Voltar"/>
+        <Button
+            android:id="@+id/btn_Back_List_Main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="50px"
+            android:text="Voltar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
