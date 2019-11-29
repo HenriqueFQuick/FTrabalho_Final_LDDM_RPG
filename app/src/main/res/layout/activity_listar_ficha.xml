@@ -17,4 +17,13 @@
         tools:layout_editor_absoluteY="230dp"
         tools:listitem="@layout/list_item_ficha"/>
 
+    <Button
+        android:id="@+id/btn_Back_List_Main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="50px"
+        android:text="Voltar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
