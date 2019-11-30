@@ -101,11 +101,13 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         Intent intent;
         switch (view.getId()){
             case R.id.btn_Confirm:
-                 SalvarDados();
-                this.finish();
-                 intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                if(SalvarDados()) {
+                    this.finish();
+                    intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
                 break;
+
             case R.id.btn_back_Criar_Main:
                 this.finish();
                 intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -116,13 +118,15 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public void SalvarDados(){
+    public boolean SalvarDados(){
         if(DadosValidos()) {
             PreencherFicha();
             DataBase db = new DataBase(ficha, this.getApplicationContext());
             db.Salvar(ficha);
+            return true;
         }else{
             Toast.makeText(getApplicationContext(), "Preencha todos os dados", Toast.LENGTH_LONG).show();
+            return false;
         }
     }
 
