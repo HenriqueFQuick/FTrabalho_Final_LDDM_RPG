@@ -92,26 +92,20 @@ public class CriarFichaActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onBackPressed(){
         this.finish();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
     }
 
     @Override
     public void onClick(View view) {
-        Intent intent;
+
         switch (view.getId()){
             case R.id.btn_Confirm:
                 if(SalvarDados()) {
                     this.finish();
-                    intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
                 }
                 break;
 
             case R.id.btn_back_Criar_Main:
                 this.finish();
-                intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
                 break;
             default:
                 break;

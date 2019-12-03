@@ -98,33 +98,25 @@ public class RecuperarFichaActivity extends AppCompatActivity implements View.On
     @Override
     public void onBackPressed(){
         this.finish();
-        Intent intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
-        startActivity(intent);
     }
 
     @Override
     public void onClick(View view) {
-        Intent intent;
+
         switch (view.getId()){
             case R.id.btn_Atualizar:
                 if(Atualizar()) {
                     this.finish();
-                    intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
-                    startActivity(intent);
                 }
                 break;
             case R.id.btn_back_Recuperar_Main:
                 this.finish();
-                intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
-                startActivity(intent);
                 break;
             case R.id.btn_Delete:
                 DataBase db = new DataBase(RecuperarFichaActivity.this);
                 PreencherFicha();
                 db.Delete(ficha);
                 this.finish();
-                intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
-                startActivity(intent);
                 break;
             default:
                 break;

@@ -26,7 +26,7 @@ import java.util.zip.DataFormatException;
         btnCriar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
                 Intent intent = new Intent(getApplicationContext(), CriarFichaActivity.class);
                 startActivity(intent);
                 
@@ -35,7 +35,7 @@ import java.util.zip.DataFormatException;
         btnListar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
                 Intent intent = new Intent(getApplicationContext(), ListarFichaActivity.class);
                 startActivity(intent);
             }

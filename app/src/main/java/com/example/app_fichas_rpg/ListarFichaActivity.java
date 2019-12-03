@@ -49,8 +49,6 @@ public class ListarFichaActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onBackPressed(){
         this.finish();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
     }
 
     @Override
@@ -58,8 +56,6 @@ public class ListarFichaActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()){
             case R.id.btn_Back_List_Main:
                 this.finish();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
                 break;
             default:
                 break;

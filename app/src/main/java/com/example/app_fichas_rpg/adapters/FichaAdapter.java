@@ -60,7 +60,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.ViewHolder> 
             @Override
 
             public void onClick(View v) {
-                ((Activity)mContext).finish();
+
                 Intent intent = new Intent(mContext, RecuperarFichaActivity.class);
                 intent.putExtra("ficha", fichas.get(position));
                 intent.putExtra("id", fichas.get(position).getId());
