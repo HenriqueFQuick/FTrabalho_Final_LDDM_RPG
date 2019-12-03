@@ -29,6 +29,7 @@ import java.util.zip.DataFormatException;
                 finish();
                 Intent intent = new Intent(getApplicationContext(), CriarFichaActivity.class);
                 startActivity(intent);
+                
             }
         });
         btnListar.setOnClickListener(new View.OnClickListener() {

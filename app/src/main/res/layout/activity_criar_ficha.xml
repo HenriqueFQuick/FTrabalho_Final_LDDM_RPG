@@ -166,7 +166,7 @@
                 android:hint="HP total"
                 android:textAlignment="center"
                 android:layout_weight="1"
-                android:inputType="numberSigned" />
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/edt_HP_Atual"
@@ -180,7 +180,7 @@
                 android:hint="HP atual"
                 android:textAlignment="center"
                 android:layout_weight="1"
-                android:inputType="numberSigned" />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -211,7 +211,7 @@
                 android:ems="10"
                 android:hint="Dano"
                 android:textAlignment="center"
-                android:inputType="numberSigned" />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -266,7 +266,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -315,7 +316,8 @@
                 android:text="0"
                 android:textFontWeight="1"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -363,7 +365,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
 
         </LinearLayout>
@@ -420,7 +423,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
         </LinearLayout>
 
         <LinearLayout
@@ -466,7 +470,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -515,7 +520,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -572,7 +578,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -619,7 +626,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -666,7 +674,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -723,7 +732,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -770,7 +780,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -817,7 +828,8 @@
                 android:ems="10"
                 android:text="0"
                 android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:inputType="number"/>
 
         </LinearLayout>
 
