@@ -1,7 +1,4 @@
 # Trabalho_Final_LDDM_RPG
-Projejto final de lddm 
+Projeto final da disciplina de Laboratorio de Desenvolvimento para Despositiveis Moveis 
 
-
-TODO
-    Tela de rolagem de dados
-    Opção de login e salvar no firebase
+    Projeto de criação de fichas de RPG e salvando em um banco de dados local
